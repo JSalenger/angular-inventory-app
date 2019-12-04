@@ -48,6 +48,10 @@ export class ProductComponent implements OnInit {
     this.deviceType = device.icon;
   }
 
+  handleClose() {
+
+  }
+
   ngOnInit() {
   }
 

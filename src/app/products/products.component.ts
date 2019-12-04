@@ -25,8 +25,16 @@ export class ProductsComponent implements OnInit {
     this.productToBeDeleted = product;
   }
 
+  onEdit(product) {
+    //
+  }
+
   handleCancel() {
     this.delete = false;
+  }
+
+  addProduct() {
+    //
   }
 
   confirmDelete() {
