@@ -1,6 +1,7 @@
 # InventoryApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+It serves as my first deep dive into frontend development with angular!
 
 ## Development server
 
