@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Form } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Form } from '@angular/forms';
 
 @Component({
   selector: 'in-product',
@@ -49,10 +49,19 @@ export class ProductComponent implements OnInit {
   }
 
   handleClose() {
+    // Dummy function until I have time to fill it in
+  }
 
+  get basicFeatures(): FormArray {
+    return this.productForm.get('basic.features') as FormArray;
+  }
+
+  addFeature() {
+    this.basicFeatures.push(this.fb.control(''));
   }
 
   ngOnInit() {
+
   }
 
 }
