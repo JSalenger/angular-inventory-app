@@ -43,10 +43,9 @@
                 # Workflows
 workflows:
   version: 2
-  # the test workflow
-  test_workflow:
+  build_and_test:
     jobs:
-      - deploy:
+      - test:
           filters:
             branches:
               only:
