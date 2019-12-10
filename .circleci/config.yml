@@ -42,7 +42,7 @@
                 # GET RID OF THIS WHEN I GET TEST AND E2E WORKING!!!!
                 - run:
                     name: Build
-                    command: npm build
+                    command: npm run build
 
                 # Workflows
     workflows:
