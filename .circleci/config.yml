@@ -53,3 +53,4 @@ workflows:
                 - develop
                 - staging
                 - master
+                - jsalenger-patch
