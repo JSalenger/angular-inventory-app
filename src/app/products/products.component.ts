@@ -10,8 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductsComponent implements OnInit {
 
+  // Boolean for whether or not the open the addProduct() wizard
+  productOpen = false;
+  selectedProduct: IProduct;
   products$: Observable<IProduct[]> = this.productsService.products$;
+  // Boolean for whether or not to open the delete product modal
   delete = false;
+  // Variable contained the data of the productToBeDeleted ( kinda self explanatory )
   productToBeDeleted;
 
   constructor(private productsService: ProductsService) { }
@@ -26,7 +31,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onEdit(product) {
-    //
+    this.productOpen = true;
+    this.selectedProduct = product;
   }
 
   handleCancel() {
@@ -34,7 +40,21 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct() {
-    //
+    this.productOpen = true;
+    this.selectedProduct = undefined;
+  }
+
+  handleFinish(event) {
+    if (event && event.product) {
+      if(this.selectedProduct) {
+        // Edit logic
+        this.productsService.editProduct(event.product, this.selectedProduct.id);
+      } else {
+        this.productsService.addProduct(event.product);
+      }
+    }
+    // After they've completed the wizard, make it go away!
+    this.productOpen = false;
   }
 
   confirmDelete() {
