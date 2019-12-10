@@ -34,7 +34,7 @@
                 # Test the source code
                 - run:
                     name: Testing
-                    command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
+                    command: npm run test -- --no-watch --no-progress
                 # End to End test
                 - run:
                     name: End to End Test
