@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   // Boolean for whether or not to open the delete product modal
   delete = false;
   // Variable contained the data of the productToBeDeleted ( kinda self explanatory )
-  productToBeDeleted;
+  productToBeDeleted: any;
 
   constructor(private productsService: ProductsService) { }
 
@@ -46,7 +46,7 @@ export class ProductsComponent implements OnInit {
 
   handleFinish(event) {
     if (event && event.product) {
-      if(this.selectedProduct) {
+      if (this.selectedProduct) {
         // Edit logic
         this.productsService.editProduct(event.product, this.selectedProduct.id);
       } else {
